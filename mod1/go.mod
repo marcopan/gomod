@@ -7,5 +7,5 @@ require (
 	test.com/mod2 v0.0.1
 )
 replace (
-	test.com/mod2 => /Users/pan/goworkspace/mod2
+	test.com/mod2 => /Users/pan/goworkspace/gomod/mod2
 )
