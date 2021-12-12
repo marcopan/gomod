@@ -9,7 +9,7 @@ import (
 	"text/template"
 )
 
-func main() {
+func main_test() {
 	//fmt.Println(util.Util())
 	//fmt.Println(util2.Mod2())
 	startServer()

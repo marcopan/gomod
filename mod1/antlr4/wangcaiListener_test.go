@@ -42,7 +42,7 @@ func TestExpression_test(t *testing.T) {
 		t.Errorf("not int 64")
 	}
 
-	if evaluate.(int64) != 4444 {
+	if evaluate.(int64) != 44449 {
 		t.Errorf("incorrect result")
 	}
 
