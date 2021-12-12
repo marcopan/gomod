@@ -26,6 +26,10 @@ func main() {
 			}
 			c.HTML(http.StatusOK, "index.html", h)
 		})
+		// http://localhost:6066/view/json
+		viwGroup.GET("/json", func(c *gin.Context) {
+			c.JSON(http.StatusOK, user{ID: 11, Name: "test", Age: 23})
+		})
 	}
 
 	r.Run(":6066")
