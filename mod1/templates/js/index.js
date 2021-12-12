@@ -7,6 +7,9 @@ if (window.XMLHttpRequest) {
     xhttp = new ActiveXObject("Microsoft.XMLHTTP");
 }
 
+function clearInput() {
+    document.main.sql.value = ""
+}
 
 
 xhttp.onreadystatechange = function() {
@@ -19,5 +22,5 @@ xhttp.onreadystatechange = function() {
 function sqlRarse() {
     xhttp.open("POST", "/sql/parse", true);
     xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(JSON.stringify({"sql":"test"}));
+    xhttp.send(JSON.stringify({"sql":document.main.sql.value}));
 }
