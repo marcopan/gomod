@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
+	"strings"
 )
 
 func main() {
@@ -39,7 +40,8 @@ func main() {
 		sqlGroup.POST("/parse", func(c *gin.Context) {
 			p := &post{}
 			c.BindJSON(p)
-			log.Println(p.Sql)
+			sql := strings.TrimSpace(p.Sql)
+			log.Println("receive a sql>>>", sql)
 			c.JSON(http.StatusOK, response{Code: 200, Message: "success"})
 		})
 	}

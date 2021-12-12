@@ -19,7 +19,7 @@ xhttp.onreadystatechange = function() {
     }
 };
 
-function sqlRarse() {
+function sqlParse() {
     xhttp.open("POST", "/sql/parse", true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify({"sql":document.main.sql.value}));
