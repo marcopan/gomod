@@ -1,3 +1,35 @@
 body {
-    background-color: aquamarine;
+    background-color: white;
+}
+
+.header {
+    background-color: darkgray;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 301;
+    min-width: 1000px;
+    background: #fff;
+    border-bottom: 1px solid #ebebeb;
+    /*position: fixed;*/
+    _position: absolute;
+    -webkit-transform: translateZ(0);
+    height: 35px;
+    font-size: large;
+}
+
+.main {
+    padding-top: 40px;
+}
+
+.body {
+    display: flex;
+    background-color: white;
+}
+
+button {
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
 }

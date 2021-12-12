@@ -5,9 +5,26 @@
         <meta charset="UTF-8">
         <title>{{.title}}</title>
         <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <script type="text/javascript" src="/js/index.js"></script>
     </head>
     <body>
-     {{.body}}
+    <div class="header">
+        <strong>W</strong>ang<strong>C</strong>a<strong>I</strong> <strong>SQL</strong> Parser....
+    </div>
+    <form action="/sql/parse" method="post" onsubmit="return false">
+        <div class="main">
+            <div>
+                SQL Input:
+            </div>
+            <div>
+                <textarea rows="30" cols="100" name="sql">
+                </textarea>
+            </div>
+            <div class="button">
+                <button id="parseBtn" onclick="sqlRarse()">parse</button>
+            </div>
+        </div>
+    </form>
     </body>
 
 </html>

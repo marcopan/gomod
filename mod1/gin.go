@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
 )
 
@@ -9,6 +10,7 @@ func main() {
 	r := gin.Default()
 
 	r.Static("/css", "./templates/css")
+	r.Static("/js", "./templates/js")
 	r.LoadHTMLGlob("templates/*.html")
 
 	group := r.Group("/api")
@@ -29,6 +31,16 @@ func main() {
 		// http://localhost:6066/view/json
 		viwGroup.GET("/json", func(c *gin.Context) {
 			c.JSON(http.StatusOK, user{ID: 11, Name: "test", Age: 23})
+		})
+	}
+
+	sqlGroup := r.Group("/sql")
+	{
+		sqlGroup.POST("/parse", func(c *gin.Context) {
+			p := &post{}
+			c.BindJSON(p)
+			log.Println(p.Sql)
+			c.JSON(http.StatusOK, response{Code: 200, Message: "success"})
 		})
 	}
 
